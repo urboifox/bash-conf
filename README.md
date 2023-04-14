@@ -8,7 +8,7 @@ those are my prefered settings so if i use another pc oneday they will be there 
 
 ## screenshot
 
-!()[./workspace.jpg]
+![](./workspace.png)
 
 ## installation
 
