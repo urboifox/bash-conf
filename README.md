@@ -14,7 +14,7 @@ if using normal vim
 if using neovim (preferred)
 
 - copy the whole file to this directory => `~/.config/nvim/init.vim` for neovim to load it
-- 
+
 if its not there create it
 
 - type `:PlugInstall` to install the plugins
