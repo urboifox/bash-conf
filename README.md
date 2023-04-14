@@ -26,8 +26,8 @@ with the nerd font (cascadia nerd) to recognize nerd tree file icons
 ## general tips
 
 - you can open nerdtree by hitting `<C-f>`
-- 
-more nerdtree tips by hitting `?` from within nerdtree
+
+  more nerdtree tips by hitting `?` from within nerdtree
 
 - you can navigate between split screens using `<C-{h, j, k, l}` where `h, j, k, l` are the normal vim navigate keys directions
 
