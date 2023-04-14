@@ -33,4 +33,4 @@ more nerdtree tips by hitting `?` from within nerdtree
 
 - open split terminal using `<C-t>`
 
-- close terminal with `Esc` key
+- exit terminal mode with `Esc` key
