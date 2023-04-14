@@ -1,10 +1,6 @@
 # vim-settings
 
-neovim `init.vim` file and can also work as `.vimrc` file
-
-those are my prefered settings so if i use another pc oneday they will be there for me
-
-`init.vim` file contains all the scripts and plugins
+ready to use vim settings
 
 ## screenshot
 
