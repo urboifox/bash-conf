@@ -34,3 +34,13 @@ with the nerd font (cascadia nerd) to recognize nerd tree file icons
 - open split terminal using `<C-t>`
 
 - exit terminal mode with `Esc` key
+
+## other files
+
+- .bashrc and .tmux.conf
+
+both should be at the home directory `~/`
+
+- plugin, plugins, lua, coc-config.json
+
+should be in `~/.config/nvim/`
