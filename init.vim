@@ -1,44 +1,55 @@
 " Specify a directory for plugins
-"
-call plug#begin('~/.vim/plugged')
+	"
+	call plug#begin('~/.vim/plugged')
 
 
-Plug 'scrooloose/nerdtree'
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	Plug 'scrooloose/nerdtree'
+	"Plug 'tsony-tsonev/nerdtree-git-plugin'
+	Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-Plug 'ryanoasis/vim-devicons'
+	Plug 'ryanoasis/vim-devicons'
 
-Plug 'airblade/vim-gitgutter'
-"Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plug 'scrooloose/nerdcommenter'
+	Plug 'airblade/vim-gitgutter'
+	"Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+	Plug 'scrooloose/nerdcommenter'
 
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'wojciechkepka/vim-github-dark'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
+	Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+	Plug 'wojciechkepka/vim-github-dark'
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+	Plug 'projekt0n/github-nvim-theme', { 'branch': '0.0.x' }
 
-Plug 'christoomey/vim-tmux-navigator'
+	Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'nvim-tree/nvim-web-devicons'
+	Plug 'nvim-tree/nvim-web-devicons'
 
-Plug 'morhetz/gruvbox'
+	Plug 'morhetz/gruvbox'
 
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+	Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-Plug 'sheerun/vim-polyglot'
+	Plug 'sheerun/vim-polyglot'
 
-"Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'yuezk/vim-js'
+	Plug 'maxmellon/vim-jsx-pretty'
+	Plug 'yuezk/vim-js'
 
-Plug 'navarasu/onedark.nvim'
+	Plug 'navarasu/onedark.nvim'
 
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+	Plug 'iamcco/coc-html', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'iamcco/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+
+	Plug 'alvan/vim-closetag'
+
+	Plug 'mattn/emmet-vim'
+	"Plug 'ThePrimeagen/harpoon'
+	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+"Plug 'jiangmiao/auto-pairs'
 " Initialize plugin system
 call plug#end()
 
@@ -73,7 +84,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fs <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
+nnoremap <C-p> :History<CR>
 
 " enable rainbow brackets globally
 let g:rainbow_active = 1
@@ -83,7 +94,7 @@ nmap <C-f> :NERDTreeToggle<CR>
 
 " open terminal with ctrl t
 nmap <C-t> :sp term://bash<CR><C-w>15-
-tnoremap <Esc> <C-\><C-n>
+
 
 
 " SAVE A SESSION WITH ALT {1, 2, 3}
@@ -107,6 +118,21 @@ nmap \\ <plug>NERDCommenterToggle
 vmap \\ <plug>NERDCommenterToggle
 nmap <C-_>   <Plug>NERDCommenterToggle
 vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
+
+" additional
+" change emmet shortcut
+let g:user_emmet_leader_key='<C-t>'
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
+
+" Enable coc.nvim extensions for JSX and HTML
+autocmd FileType javascript.jsx setl filetype=javascript
+autocmd FileType javascript.jsx setl completefunc=javascriptcomplete#CompleteJSX
+autocmd FileType html setl completefunc=htmlcomplete#CompleteTags
+
+autocmd FileType html,jsx setlocal omnifunc=htmlcomplete#CompleteTags
+
 
 
 " vim-prettier
@@ -152,6 +178,7 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 
 lua require("gunblade.plugins-setup")
 lua require("gunblade.plugins.lualine")
+" auto completion plugin, i have another one above
 "lua require("gunblade.plugins.nvim-cmp")
 lua require("gunblade.plugins.autopairs")
 lua require("gunblade.core.keymaps")
@@ -186,3 +213,5 @@ nmap <leader>rn <Plug>(coc-rename)
 
 
 inoremap <expr> <Enter> pumvisible() ? "\<C-Y>" : v:lua.MPairs.completion_confirm()
+"inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
