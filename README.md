@@ -9,19 +9,22 @@ ready to use vim settings
 ## installation
 
 if using normal vim
+
 - copy file contents to `.vimrc` file
 
 if using neovim (preferred)
 
-- copy the whole file to this directory => `~/.config/nvim/init.vim` for neovim to load it
+- put plugin, plugins, init.vim, lua, coc-config.json in `~/.config/nvim/`
+  if its not there create it
 
-if its not there create it
+- open `init.vim` and type `:PackerInstall` first
+  to install packer (plugin manager)
 
-- type `:PlugInstall` to install the plugins
+- then type `:PlugInstall` to install the plugins
 
-- restart vim/nvim or type source `~/<location of vim file>`
+- restart vim/nvim or type `:source ~/<location of vim file>`
 
-with the nerd font (cascadia nerd) to recognize nerd tree file icons
+- install the nerd font (cascadia nerd) in your terminal or system to recognize nerd tree file icons
 
 ## general tips
 
@@ -35,12 +38,7 @@ with the nerd font (cascadia nerd) to recognize nerd tree file icons
 
 - exit terminal mode with `Esc` key
 
-## other files
+### if you are not using tmux or don't know what it is dont bother with these files
 
 - .bashrc and .tmux.conf
-
-both should be at the home directory `~/`
-
-- plugin, plugins, lua, coc-config.json
-
-should be in `~/.config/nvim/`
+  both should be at the home directory `~/`
