@@ -17,6 +17,31 @@ if using neovim (preferred)
 - put plugin, plugins, init.vim, lua, coc-config.json in `~/.config/nvim/`
   if its not there create it
 
+- Upgrade neovim to the latest version
+```
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+```
+If the ./nvim.appimage command fails, try:
+```
+./nvim.appimage --appimage-extract
+./squashfs-root/AppRun --version
+```
+
+# Optional: exposing nvim globally.
+```
+sudo mv squashfs-root /
+sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+nvim
+```
+
+- install vim plug
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 - open `init.vim` and type `:PackerInstall` first
   to install packer (plugin manager)
 
