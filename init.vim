@@ -215,3 +215,49 @@ nmap <leader>rn <Plug>(coc-rename)
 inoremap <expr> <Enter> pumvisible() ? "\<C-Y>" : v:lua.MPairs.completion_confirm()
 "inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
+" fox stuff
+
+" after colorscheme is applied remove the background color so it always
+" matches the terminal background
+highlight Normal guibg=none
+highlight SignColumn guibg=none
+highlight FoldColumn guibg=none
+highlight VertSplit guibg=none
+highlight NonText guibg=none
+highlight ColorColumn guibg=none
+highlight EndOfBuffer guibg=none
+
+""save with ctrl s
+noremap <C-s> :wa<CR>
+
+" dont open any empty tabs when i reopen a session
+" works especially with nerdtree
+
+"nmap <C-f> :NERDTreeToggle<CR>
+"nmap <C-_>   <Plug>NERDCommenterToggle
+"vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+" additional
+" change emmet shortcut
+let g:user_emmet_leader_key='<C-t>'
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
+
+
+" Enable coc.nvim extensions for JSX and HTML
+autocmd FileType javascript.jsx setl filetype=javascript
+autocmd FileType javascript.jsx setl completefunc=javascriptcomplete#CompleteJSX
+autocmd FileType html setl completefunc=htmlcomplete#CompleteTags
+
+autocmd FileType html,jsx setlocal omnifunc=htmlcomplete#CompleteTags
+
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Start NERDTree when Vim is started without file arguments.
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+"autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
