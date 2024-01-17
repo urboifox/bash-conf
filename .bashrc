@@ -175,5 +175,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-PS1='\[\033[1;34m\]\u\[\033[0m\]💀-[\[\033[1;32m\]\w\[\033[0m\]]$ '
-
+PS1='\[\033[1;31m\]\u\[\033[0m\]💀-[\[\033[1;32m\]\w\[\033[0m\]]$ '
